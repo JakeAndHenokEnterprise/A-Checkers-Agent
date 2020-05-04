@@ -10,6 +10,7 @@ bool gameStatus = true;
 int row1, row2, col1, col2;
 
 //functions
+void minimax();
 void input();
 void move();
 bool legalMove();
@@ -29,6 +30,11 @@ char board[8][8] =
     {' ', 'r', ' ', 'r', ' ', 'r', ' ', 'r'},
     {'r', ' ', 'r', ' ', 'r', ' ', 'r', ' '},
 };
+
+void minimax()
+{
+    
+}
 
 void input()
 {
