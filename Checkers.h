@@ -8,6 +8,8 @@ char turn = 'B';
 bool leap;
 bool gameStatus = true;
 int row1, row2, col1, col2;
+int scoreBoard[2]={0,0};
+char rematch;
 
 //functions
 void minimax();
@@ -51,6 +53,9 @@ void intro()
     cout << "King Pieces can be utilised when a piece reaches the end of the other side of the board.\n";
     cout << "Input position with rows first then columns.\n";
     cout << "Press enter to begin...";
+    cout << "SCORE---> PLAYER 1: " << scoreBoard[0] << "\n";
+    cout << "SCORE---> CPU: " << scoreBoard[1] << "\n\n";
+
 }
 
 void minimax()
@@ -318,6 +323,8 @@ void dispBoard()
     cout << "7|    " << board[7][0] << "    |    " << board[7][1] << "    |    " << board[7][2] << "    |    " << board[7][3] << "    |    " << board[7][4] << "    |    " << board[7][5] << "    |    " << board[7][6] << "    |    " << board[7][7] << "    |\n";
     cout << " |         |         |         |         |         |         |         |         |\n";
     cout << " |_________|_________|_________|_________|_________|_________|_________|_________|\n";
+    cout << "==================================================================================\n\n\n\n";
+    cout << "       0         1         2         3         4         5         6         7     \n";
 }
 
 void king() //capitalizes the checker letter so it becomes a KING

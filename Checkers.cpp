@@ -7,9 +7,10 @@ using namespace std;
 
 int main()
 {
+
 	intro();
     cin.get();                //Waits for the user to press enter
-
+do{
     while (gameStatus)
     {
         dispBoard();
@@ -32,14 +33,20 @@ int main()
     if (turn == 'B')
     {
         cout << endl << endl << "Player 2 [Red] wins!!!\n";
-
+        scoreBoard[1]++;
     }
     else if (turn == 'R')
     {
         cout << endl << endl << "Player 1 [Black] wins!!!\n";
-
+        scoreBoard[0]++;
     }
 
+    cout<<"rematch?(y/n)";
+    cin>>rematch;
+
+}while(rematch=='y'||rematch=='Y');
     cout << "GAME OVER!\n";
+    
 }
+
 
