@@ -4,8 +4,8 @@ Checkers game using minimaxing as the AI opponent
 
     Instructions:
     =================================================
-    Player 1 is [b] 
-    Player 2 is [r]
+    Player 1 is [x] 
+    Player 2 is [o]
     A capital letter of the respective b/r pieces represents a king on the board.
     A piece is 'crowned' king by reaching the end of the board (the opposite side from which it started on)
     Rows and columns start with an index of 0, not 1\n" <<endl;
