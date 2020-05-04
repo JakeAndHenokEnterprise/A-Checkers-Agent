@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-	intro();
+    intro();
     cin.get();                //Waits for the user to press enter
 
     while (gameStatus)
