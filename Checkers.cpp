@@ -15,13 +15,13 @@ do{
     {
         dispBoard();
 
-        if (turn == 'B')
+        if (turn == 'X')
         {
-            cout << "--Player 1 [B]--\n";
+            cout << "--Player 1 [X]--\n";
         }
-        else if (turn == 'R')
+        else if (turn == 'O')
         {
-            cout << "--Player 2 [R]--\n";
+            cout << "--Player 2 [O]--\n";
         }
 
         input();
@@ -30,17 +30,18 @@ do{
         endGame();
     }
 
-    if (turn == 'B')
+    if (turn == 'X')
     {
         cout << endl << endl << "Player 2 [Red] wins!!!\n";
         scoreBoard[1]++;
     }
-    else if (turn == 'R')
+    else if (turn == 'O')
     {
         cout << endl << endl << "Player 1 [Black] wins!!!\n";
         scoreBoard[0]++;
     }
-
+    cout << "SCORE---> PLAYER 1: " << scoreBoard[0] << "\n";
+    cout << "SCORE---> CPU: " << scoreBoard[1] << "\n\n";
     cout<<"rematch?(y/n)";
     cin>>rematch;
 

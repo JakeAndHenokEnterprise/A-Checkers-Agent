@@ -4,7 +4,7 @@
 using namespace std;
 
 //variables
-char turn = 'B';
+char turn = 'X';
 bool leap;
 bool gameStatus = true;
 int row1, row2, col1, col2;
@@ -23,14 +23,14 @@ void endGame();
 
 char board[8][8] =
 {
-    {' ', 'b', ' ', 'b', ' ', 'b', ' ', 'b'},
-    {'b', ' ', 'b', ' ', 'b', ' ', 'b', ' '},
-    {' ', 'b', ' ', 'b', ' ', 'b', ' ', 'b'},
+    {' ', 'x', ' ', 'x', ' ', 'x', ' ', 'x'},
+    {'x', ' ', 'x', ' ', 'x', ' ', 'x', ' '},
+    {' ', 'x', ' ', 'x', ' ', 'x', ' ', 'x'},
     {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
     {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-    {'r', ' ', 'r', ' ', 'r', ' ', 'r', ' '},
-    {' ', 'r', ' ', 'r', ' ', 'r', ' ', 'r'},
-    {'r', ' ', 'r', ' ', 'r', ' ', 'r', ' '},
+    {'o', ' ', 'o', ' ', 'o', ' ', 'o', ' '},
+    {' ', 'o', ' ', 'o', ' ', 'o', ' ', 'o'},
+    {'o', ' ', 'o', ' ', 'o', ' ', 'o', ' '},
 };
 void intro()
 {
@@ -38,8 +38,8 @@ void intro()
     cout << "                    by Jacob Anderson & Henok Bekele                      \n" << endl;
 
     cout << "Instructions:\n";
-    cout << "Player 1 is [b] on the checker board\n";
-    cout << "Player 2 is [r] on the checker board\n\n";
+    cout << "Player 1 is [x] on the checker board\n";
+    cout << "Player 2 is [o] on the checker board\n\n";
     cout << "The goal is to take out all of the opponents peices";
     cout << "<------COLUMNS------>\n";
     cout << "^\n";
@@ -107,38 +107,38 @@ void input()
 void move()
 {
     bool king_piece = false;
-    if (board[row1][col1] == 'B' || board[row1][col1] == 'R')
+    if (board[row1][col1] == 'X' || board[row1][col1] == 'O')
     {
         king_piece = true;
     }
 
     board[row1][col1] = ' ';
 
-    if (turn == 'B')
+    if (turn == 'X')
     {
         if (king_piece == false)
         {
-            board[row2][col2] = 'b';
+            board[row2][col2] = 'x';
         }
         else if (king_piece == true)
         {
-            board[row2][col2] = 'B';
+            board[row2][col2] = 'X';
         }
 
-        turn = 'R';
+        turn = 'O';
     }
-    else if (turn == 'R')
+    else if (turn == 'O')
     {
         if (king_piece == false)
         {
-            board[row2][col2] = 'r';
+            board[row2][col2] = 'o';
         }
         else if (king_piece == true)
         {
-            board[row2][col2] = 'R';
+            board[row2][col2] = 'O';
         }
 
-        turn = 'B';
+        turn = 'X';
     }
 
     if (leap == true)
@@ -150,9 +150,9 @@ void move()
 bool legalMove() //constructs restrictions based on rules of checkers and handles errors associated with it.
 {
     //checks if a non-king piece is moving backwards.
-    if (board[row1][col1] != 'B' && board[row1][col1] != 'R')
+    if (board[row1][col1] != 'X' && board[row1][col1] != 'O')
     {
-        if ((turn == 'B' && row2 < row1) || (turn == 'R' && row2 > row1))
+        if ((turn == 'X' && row2 < row1) || (turn == 'O' && row2 > row1))
         {
             leap = false;
             return false;
@@ -247,13 +247,13 @@ void doLeap()
             cin >> col2;
         }
 
-        if (turn == 'B')
+        if (turn == 'X')
         {
-            turn = 'R';
+            turn = 'O';
         }
-        else if (turn == 'R')
+        else if (turn == 'O')
         {
-            turn = 'B';
+            turn = 'X';
         }
 
         legalMove();
@@ -262,13 +262,13 @@ void doLeap()
         {
             cout << "INVALID LEAP!!\n";
 
-            if (turn == 'B')
+            if (turn == 'X')
             {
-                turn = 'R';
+                turn = 'O';
             }
-            else if (turn == 'R')
+            else if (turn == 'O')
             {
-                turn = 'B';
+                turn = 'X';
             }
         }
         else if (leap == true)
@@ -331,14 +331,14 @@ void king() //capitalizes the checker letter so it becomes a KING
 {
     for (int i = 0; i < 8; i++)
     {
-        if (board[0][i] == 'r')
+        if (board[0][i] == 'o')
         {
-            board[0][i] = 'R';
+            board[0][i] = 'O';
         }
 
-        if (board[7][i] == 'b')
+        if (board[7][i] == 'x')
         {
-            board[7][i] = 'B';
+            board[7][i] = 'X';
         }
     }
 }
