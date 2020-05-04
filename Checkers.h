@@ -30,6 +30,28 @@ char board[8][8] =
     {' ', 'r', ' ', 'r', ' ', 'r', ' ', 'r'},
     {'r', ' ', 'r', ' ', 'r', ' ', 'r', ' '},
 };
+void intro()
+{
+    cout << "                       The MinMax Checkers Game                         " << endl;
+    cout << "                    by Jacob Anderson & Henok Bekele                      \n" << endl;
+
+    cout << "Instructions:\n";
+    cout << "Player 1 is [b] on the checker board\n";
+    cout << "Player 2 is [r] on the checker board\n\n";
+    cout << "The goal is to take out all of the opponents peices";
+    cout << "<------COLUMNS------>\n";
+    cout << "^\n";
+    cout << "|\n";
+    cout << "|\n";
+    cout << "ROWS\n";
+    cout << "|\n";
+    cout << "|\n";
+    cout << "v\n\n";
+    cout << "A capital letter represents a king piece.\n";
+    cout << "King Pieces can be utilised when a piece reaches the end of the other side of the board.\n";
+    cout << "Input position with rows first then columns.\n";
+    cout << "Press enter to begin...";
+}
 
 void minimax()
 {
