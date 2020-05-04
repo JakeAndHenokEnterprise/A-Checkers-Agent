@@ -22,9 +22,9 @@ int main()
     cout << "Press enter to begin...";
     cin.get();                //Waits for the user to press enter
 
-    while (game_running)
+    while (gameStatus)
     {
-        display_board();
+        dispBoard();
 
         if (turn == 'B')
         {
@@ -38,7 +38,7 @@ int main()
         input();
         move();
         king();
-        game_over();
+        endGame();
     }
 
     if (turn == 'B')
