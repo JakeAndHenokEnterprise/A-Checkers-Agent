@@ -40,7 +40,7 @@ void intro()
     cout << "Instructions:\n";
     cout << "Player 1 is [x] on the checker board\n";
     cout << "Player 2 is [o] on the checker board\n\n";
-    cout << "The goal is to take out all of the opponents peices";
+    cout << "The goal is to take out all of the opponents peices\n";
     cout << "<------COLUMNS------>\n";
     cout << "^\n";
     cout << "|\n";
@@ -53,19 +53,18 @@ void intro()
     cout << "King Pieces can be utilised when a piece reaches the end of the other side of the board.\n";
     cout << "Input position with rows first then columns.\n";
     cout << "Press enter to begin...";
-    cout << "SCORE---> PLAYER 1: " << scoreBoard[0] << "\n";
-    cout << "SCORE---> CPU: " << scoreBoard[1] << "\n\n";
 
 }
 
 void minimax()
 {
     
+    
 }
 
 void input()
 {
-    cout << "Move piece\n";
+    cout << "Select piece you would like to move.\n";
     cout << "Row: ";
     cin >> row1;
     cout << "Column: ";
@@ -81,7 +80,7 @@ void input()
         cin >> col1;
     }
 
-    cout << "To box\n";
+    cout << "Where would you like to move this piece?\n";
     cout << "Row: ";
     cin >> row2;
     cout << "Column: ";
@@ -99,7 +98,7 @@ void input()
 
     while (legalMove() == false)
     {
-        cout << "Illegal Move. Please try again. Remember, rows first then columns (left hand side then the top)\n";
+        cout << "Illegal Move. Please try again.\n";
         input();
     }
 }
@@ -107,14 +106,14 @@ void input()
 void move()
 {
     bool king_piece = false;
-    if (board[row1][col1] == 'X' || board[row1][col1] == 'O')
+    if (board[row1][col1] == 'X' || board[row1][col1] == 'O')//test for king peice in current position
     {
         king_piece = true;
     }
 
     board[row1][col1] = ' ';
 
-    if (turn == 'X')
+    if (turn == 'X')//turning regular x pieces into kings
     {
         if (king_piece == false)
         {
@@ -127,7 +126,7 @@ void move()
 
         turn = 'O';
     }
-    else if (turn == 'O')
+    else if (turn == 'O')//turning regular o pieces into king pieces
     {
         if (king_piece == false)
         {
@@ -323,7 +322,7 @@ void dispBoard()
     cout << "7|    " << board[7][0] << "    |    " << board[7][1] << "    |    " << board[7][2] << "    |    " << board[7][3] << "    |    " << board[7][4] << "    |    " << board[7][5] << "    |    " << board[7][6] << "    |    " << board[7][7] << "    |\n";
     cout << " |         |         |         |         |         |         |         |         |\n";
     cout << " |_________|_________|_________|_________|_________|_________|_________|_________|\n";
-    cout << "==================================================================================\n\n\n\n";
+    cout << "==================================================================================\n\n";
     cout << "       0         1         2         3         4         5         6         7     \n";
 }
 
@@ -344,7 +343,7 @@ void king() //capitalizes the checker letter so it becomes a KING
 }
 
 
-void endGame()
+void endGame()//runs through board looking for empty spaces
 {
     int counter = 0;
 

@@ -33,17 +33,17 @@ do{
     if (turn == 'X')
     {
         cout << endl << endl << "Player 2 [Red] wins!!!\n";
-        scoreBoard[1]++;
+        scoreBoard[1]++;//increment the score board
     }
     else if (turn == 'O')
     {
         cout << endl << endl << "Player 1 [Black] wins!!!\n";
-        scoreBoard[0]++;
+        scoreBoard[0]++;//increment the score board
     }
     cout << "SCORE---> PLAYER 1: " << scoreBoard[0] << "\n";
     cout << "SCORE---> CPU: " << scoreBoard[1] << "\n\n";
     cout<<"rematch?(y/n)";
-    cin>>rematch;
+    cin>>rematch;//request for rematch
 
 }while(rematch=='y'||rematch=='Y');
     cout << "GAME OVER!\n";
